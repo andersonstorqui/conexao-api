@@ -1,5 +1,0 @@
-function abrindoTS() {
-
-}
-
-export{ abrindoTS }

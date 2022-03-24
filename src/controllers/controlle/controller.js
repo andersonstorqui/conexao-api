@@ -1,10 +1,9 @@
-const db = require("./../mock/db.json");
-const Empresas = require("../models/Empresas");
-const { readFileSync } = require("../controllers/Read");
+const Empresas = require("../../models/Empresas");
+const Read = require("../Read");
 
 class Controller {
   static getAll() {
-    const read = readFileSync("./src/mock/db.json");
+    const read = Read.readFileSync("./../mock/db.json");
     const data = JSON.parse(read);
 
     return data;

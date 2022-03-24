@@ -1,14 +1,13 @@
 const { Router } = require("express");
-const controller = require("../controllers/controller");
+const Controller = require("../controllers/controlle/controller");
 const router = Router();
 const mock = require("../mock/db.json");
-const Read = require("../controllers/Read");
-const { readFileSync } = require("../controllers/Read");
+const Write = require("../controllers/Write");
 
 router.get("/clientes", (req, res) => {
   if (req.length !== 0) {
-    const data = controller.getAll();
-    const gerandoId = require("shortid");
+    const data = Controller.getAll();
+    // const gerandoId = require("shortid");
     //
     res.status(200).json(data);
   } else {
@@ -17,7 +16,7 @@ router.get("/clientes", (req, res) => {
 });
 router.post("/clientes", (req, res) => {
   if (Object.keys(req.body).length !== 0) {
-    const data = controller.create(req.body);
+    const data = Controller.create(req.body);
     res.status(201).json(data);
   } else {
     res.status(200).json([]);
@@ -46,18 +45,14 @@ router.delete("/cliente/:id", (req, res) => {
         console.log("indice menos um");
         res.sendStatus(400);
       } else {
-        console.log(mock.Empresas.splice(index, 1));
-        console.log("acho que foi");
+        const mockEmpresas = mock.Empresas;
+        console.log(mockEmpresas.splice(index, 1));
 
-        mock.Empresas.splice(index, 1);
-        readFileSync();
+        mockEmpresas.splice(index, 1);
 
-        //const convertendoEmJsParaExcluirIndice = JSON.parse(mock);
-        // convertendoJsonEmJsParaExcluirIndice.
+        // Controller.getAll(mockEmpresas);
+        Write.WriteData(mockEmpresas);
 
-        //const convertendoEmJson = JSON.stringify(
-        //convertendoJsonEmJsParaExcluirIndice
-        //);
         res.sendStatus(200);
       }
     }
