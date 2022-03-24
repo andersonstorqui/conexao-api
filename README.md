@@ -1,6 +1,3 @@
 # apiModeloConexao
-# apiModeloConexao
-# APIconexaoModelo
-# APIconexaoModelo
-# APIconexaoModelo
-# modelo-vencedor-api
+
+Api para listar e cadastrar empresas clientes da Modelo Vencedor
