@@ -14,6 +14,7 @@ router.get("/clientes", (req, res) => {
     res.status(200).json([]);
   }
 });
+
 router.post("/clientes", (req, res) => {
   if (Object.keys(req.body).length !== 0) {
     const data = Controller.create(req.body);
