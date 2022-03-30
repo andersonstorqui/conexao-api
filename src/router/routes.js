@@ -170,18 +170,19 @@ router.put("/clientes/:id", (req, res) => {
       iDObjetoPut._nome.senhaFocoTeste = req.body._nome.senhaFocoTeste;
     }
 
-    let arrayDeObjetosPut = { ...iDObjetoPut };
+    let guardarCadaClienteEmUnicavariavel = {
+      Empresas: [],
+    };
 
-    console.log(arrayDeObjetosPut);
-
-    // for (let objeto in iDObjetoPut) {
-    //
-    // }
+    for (let objeto in objetoJS) {
+      guardarCadaClienteEmUnicavariavel.Empresas = [...objetoJS[objeto]];
+    }
     // fs.writeFileSync(
     //   "./src/mock/db.json",
-    //   JSON.stringify({ ...objetoJS[objeto] }, null, 2),
+    //   JSON.stringify({ ...guardarCadaClienteEmUnicavariavel }, null, 2),
     //   "utf-8"
     // );
+    Write.WriteData(guardarCadaClienteEmUnicavariavel);
   }
 });
 

@@ -1,7 +1,5 @@
-const db = require("./../mock/db.json");
 const Write = require("../controllers/Write");
 const fs = require("fs");
-const controller = require("../controllers/controller");
 
 class Empresas {
   constructor(
