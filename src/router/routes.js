@@ -1,4 +1,3 @@
-// const Controller = require("../controllers/controller");
 const { Router } = require("express");
 const router = Router();
 const mock = require("../mock/db.json");
@@ -11,12 +10,23 @@ router.get("/clientes", (req, res) => {
   if (req.length !== 0) {
     const read = readFileSync("./src/mock/db.json");
     const data = JSON.parse(read);
-    // const gerandoId = require("shortid");
-    //
     res.status(200).json(data);
   } else {
     res.status(200).json([]);
   }
+});
+
+router.get("/cliente/:id", (req, res) => {
+  const id = req.params.id;
+  const read = readFileSync("./src/mock/db.json");
+  const data = JSON.parse(read);
+
+  const encontrandoObjetoDaRequisicao = data.Empresas.find((cliente) => {
+    return cliente._nome.id == id;
+  });
+
+  res.send(encontrandoObjetoDaRequisicao);
+  res.sendStatus(200);
 });
 
 router.post("/clientes", (req, res) => {
@@ -32,7 +42,7 @@ router.post("/clientes", (req, res) => {
 router.get("/validatetoken", (req, res) => {
   let tokenValidate = req.query["token"];
 
-  res.send(tokenValidate);
+  res.statusCode = 200;
 });
 
 router.delete("/cliente/:id", (req, res) => {
@@ -177,21 +187,11 @@ router.put("/clientes/:id", (req, res) => {
     for (let objeto in objetoJS) {
       guardarCadaClienteEmUnicavariavel.Empresas = [...objetoJS[objeto]];
     }
-    // fs.writeFileSync(
-    //   "./src/mock/db.json",
-    //   JSON.stringify({ ...guardarCadaClienteEmUnicavariavel }, null, 2),
-    //   "utf-8"
-    // );
+
     Write.WriteData(guardarCadaClienteEmUnicavariavel);
+    res.sendStatus(200);
   }
 });
-
-//achar id para alterar no array, objeto atualizado
-//pego requisição feita pelo cliente
-//valido alguns campos
-//atribuo ao lendoMock
-//escrevo com writefilesync com spread operator juntando resto dos objetos
-//faço spread com chaves
 
 /////////////////////////////////////////////////**********************************************----------------------- */
 // router.get("/", (req, res) => {
