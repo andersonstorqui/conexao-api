@@ -91,8 +91,11 @@ router.put("/clientes/:id", (req, res) => {
   const bufferBancoDados = lendoMock.toString();
   const objetoJS = JSON.parse(bufferBancoDados);
 
-  if (isNaN(id)) {
+  const alterandoIdParaNumber = Number(id)
+
+  if (typeof alterandoIdParaNumber !== "number") {
     res.sendStatus(400);
+    res.send(id)
   } else {
     const iDObjetoPut = objetoJS.Empresas.find((cliente) => {
       return cliente._nome.id == id;

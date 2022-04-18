@@ -34,38 +34,6 @@
     },
     {
       "_nome": {
-        "name": "Mobitec",
-        "id": 1,
-        "ipInternoTS1": "",
-        "ipExternoTS1": "200.174.166.226:4001",
-        "usuarioTS1": "mobitec",
-        "senhaTS1": "modelo_venc3dor2019",
-        "ipInternoTS2": "",
-        "ipExternoTS2": "200.174.166.226:4001",
-        "usuarioTS2": "modelovencedor",
-        "senhaTS2": "modelo_venc3dor2019",
-        "ipBancoProd": "",
-        "usuarioBancoProd": "focco3i",
-        "senhaBancoProd": "",
-        "hostBancoProd": "192.168.0.2",
-        "portaBancoProd": "1521",
-        "ssidBancoProd": "f3ipro",
-        "ipBancoTeste": "",
-        "usuarioBancoTeste": "focco3i",
-        "senhaBancoTeste": "tesmobitec",
-        "hostBancoTeste": "192.168.0.2",
-        "portaBancoTeste": "1521",
-        "ssidBancoTeste": "f3ites",
-        "ipFocoProd": "//192.168.0.249/proweb/Authentication/Login?ReturnUrl=%2Fproweb",
-        "usuarioFocoProd": "modelovencedor",
-        "senhaFocoProd": "modelo2020",
-        "ipFocoTeste": "//192.168.0.249/tesweb/Authentication/Login?ReturnUrl=%2Ftesweb%2Ferp",
-        "usuarioFocoTeste": "modelovencedor",
-        "senhaFocoTeste": "modelo2020"
-      }
-    },
-    {
-      "_nome": {
         "name": "NTC Moldes",
         "id": 2,
         "ipInternoTS1": "",
