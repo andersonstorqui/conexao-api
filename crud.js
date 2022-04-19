@@ -5,13 +5,13 @@
   try {
     const resultado = await database.sync();
     // CREATED
-    // const resultadoCreate = await Senha.create({
-    //   name: "",
-    //   host: "",
-    //   usuario: "",
-    //   senha: "",
-    //   observacoes: "",
-    // });
+    const resultadoCreate = await Senha.create({
+      name: "Lidio Carraro",
+      host: "oracle",
+      usuario: "focco3i",
+      senha: "VERSION",
+      observacoes: "",
+    });
     // READ
     const clientes = await Senha.findAll();
     // console.log(clientes);

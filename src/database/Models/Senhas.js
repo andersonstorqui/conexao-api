@@ -8,6 +8,14 @@ const Senhas = database.define("Senhas", {
     allowNull: false,
     primaryKey: true,
   },
+  parceiro_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  tipo_acesso_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
   name: {
     type: Sequelize.STRING,
     allowNull: false,
