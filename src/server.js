@@ -1,5 +1,6 @@
 const app = require("./app");
 // const modelo = require("../src/database/database");
+const crud = require("../crud");
 const cors = require("cors");
 
 app.use(cors());
