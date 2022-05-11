@@ -5,7 +5,7 @@ const db = require("../db/conn");
 const Parceiro = require("./Parceiro");
 const Tipo_acesso = require("./Tipo_acesso");
 
-const Acesso = db.define("tParceiro_acesso", {
+const Acesso = db.define("Parceiro_acesso", {
   usuario: {
     type: DataTypes.STRING,
     required: true,
@@ -27,8 +27,8 @@ const Acesso = db.define("tParceiro_acesso", {
 Parceiro.hasMany(Acesso);
 Acesso.belongsTo(Parceiro);
 
-Tipo_acesso.hasMany(Acesso);
-Acesso.belongsTo(Tipo_acesso);
+// Tipo_acesso.hasMany(Acesso);
+// Acesso.belongsTo(Tipo_acesso);
 
 module.exports = Acesso;
 

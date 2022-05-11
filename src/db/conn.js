@@ -11,3 +11,5 @@ try {
 } catch (err) {
   console.log(err, "É NÃO FOI");
 }
+
+module.exports = sequelize;
