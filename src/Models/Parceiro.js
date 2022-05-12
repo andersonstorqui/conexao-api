@@ -10,8 +10,8 @@ const Parceiro = db.define("Parceiro", {
     required: true,
   },
   cnpj_cpf: {
-    type: DataTypes.INTEGER,
-    required: true,
+    type: DataTypes.STRING,
+    // required: true,
   },
   informacoes_adicionais: {
     type: DataTypes.STRING,

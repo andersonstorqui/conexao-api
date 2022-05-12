@@ -8,19 +8,19 @@ const Tipo_acesso = require("./Tipo_acesso");
 const Acesso = db.define("Parceiro_acesso", {
   usuario: {
     type: DataTypes.STRING,
-    required: true,
+    // required: true,
   },
   senha: {
     type: DataTypes.STRING,
-    required: true,
+    // required: true,
   },
   host: {
     type: DataTypes.STRING,
-    required: true,
+    // required: true,
   },
   observacao: {
     type: DataTypes.STRING,
-    required: true,
+    // required: true,
   },
 });
 
