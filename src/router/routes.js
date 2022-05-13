@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const router = Router();
-// const Empresas = require("./../models/Empresas");
 const Parceiro = require("../Models/Parceiro");
 const Acesso = require("../Models/Acesso");
 const Tipo_acesso = require("../Models/Tipo_acesso");
@@ -19,7 +18,9 @@ router.get("cliente/:id", async (req, res) => {
   const id = req.params.id;
   const user = await Parceiro.findOne({ raw: true, where: { id: id } });
   console.log(user);
-  //MOSTRAR NA TELA QUANDO REQUISITADO, COLOCAR RESPOSTA HTTP
+  res.send(user);
+  res.status(200);
+  //MOSTRAR NA TELA QUANDO REQUISITADO, COLOCAR RESPOSTA HTTP=ok
 });
 
 router.post("/clientes", (req, res) => {
@@ -59,17 +60,31 @@ router.post("/acesso/create", async (req, res) => {
   const senha = req.body.senha;
   const host = req.body.host;
   const observacao = req.body.observacao;
+  const ParceiroId = req.body.ParceiroId;
 
   const acesso = {
+    ParceiroId: ParceiroId,
     usuario: usuario,
     senha: senha,
     host: host,
     observacao: observacao,
   };
 
-  await Acesso.create(acesso);
+  try {
+    await Acesso.create(acesso);
+    res.status(201);
+  } catch (err) {
+    console.log(err);
+  }
 
   //FAZER TELA DE ENVIAR DADOS DE ACESSO
+});
+
+router.get("/acesso/create", async (req, res) => {
+  const user = await Parceiro.findAll();
+  res.send(user);
+  res.status(200);
+  //AQUI MOSTRAR NA TELA QUANDO REQUISITADO=ok
 });
 
 router.get("/acesso/edit/:id", async (req, res) => {

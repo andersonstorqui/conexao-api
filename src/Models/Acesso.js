@@ -3,12 +3,12 @@ const { DataTypes } = require("sequelize");
 const db = require("../db/conn");
 
 const Parceiro = require("./Parceiro");
-const Tipo_acesso = require("./Tipo_acesso");
+// const Tipo_acesso = require("./Tipo_acesso");
 
 const Acesso = db.define("Parceiro_acesso", {
   usuario: {
     type: DataTypes.STRING,
-    // required: true,
+    required: true,
   },
   senha: {
     type: DataTypes.STRING,
