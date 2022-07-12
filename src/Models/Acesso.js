@@ -1,36 +1,36 @@
-const { DataTypes } = require("sequelize");
+// const { DataTypes } = require('sequelize');
 
-const db = require("../db/conn");
+// const db = require('../db/conn');
 
-const Parceiro = require("./Parceiro");
-// const Tipo_acesso = require("./Tipo_acesso");
+// const Parceiro = require('./Parceiro');
+// const Tipo_acesso = require('./Tipo_acesso');
 
-const Acesso = db.define("Parceiro_acesso", {
-  usuario: {
-    type: DataTypes.STRING,
-    required: true,
-  },
-  senha: {
-    type: DataTypes.STRING,
-    // required: true,
-  },
-  host: {
-    type: DataTypes.STRING,
-    // required: true,
-  },
-  observacao: {
-    type: DataTypes.STRING,
-    // required: true,
-  },
-});
+// const Acesso = db.define('Parceiro_acesso', {
+//   usuario: {
+//     type: DataTypes.STRING,
+//     required: true,
+//   },
+//   senha: {
+//     type: DataTypes.STRING,
+//     // required: true,
+//   },
+//   host: {
+//     type: DataTypes.STRING,
+//     // required: true,
+//   },
+//   observacao: {
+//     type: DataTypes.STRING,
+//     // required: true,
+//   },
+// });
 
-Parceiro.hasMany(Acesso);
-Acesso.belongsTo(Parceiro);
+// Parceiro.hasMany(Acesso);
+// Acesso.belongsTo(Parceiro);
 
 // Tipo_acesso.hasMany(Acesso);
 // Acesso.belongsTo(Tipo_acesso);
 
-module.exports = Acesso;
+// module.exports = Acesso;
 
 /**
  * usuario=ok

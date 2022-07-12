@@ -1,21 +1,20 @@
-const { DataTypes } = require("sequelize");
+// const { DataTypes } = require('sequelize');
 
-const db = require("../db/conn");
+// const db = require('../db/conn');
 
-const Tipo_acesso = db.define("Tipo_acesso", {
-  servico: {
-    type: DataTypes.STRING,
-    // allowNull: false,
-  },
-  descricao: {
-    type: DataTypes.STRING,
-  },
-  ativo: {
-    type: DataTypes.TINYINT,
-  },
-});
+// const Tipo_acesso = db.define('Tipo_acesso', {
+//   servico: {
+//     type: DataTypes.STRING,
+//   },
+//   descricao: {
+//     type: DataTypes.STRING,
+//   },
+//   ativo: {
+//     type: DataTypes.TINYINT,
+//   },
+// });
 
-module.exports = Tipo_acesso;
+// module.exports = Tipo_acesso;
 
 /**
  * servico
